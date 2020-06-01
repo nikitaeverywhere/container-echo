@@ -1,0 +1,28 @@
+{
+  "name": "container-echo",
+  "version": "1.0.0",
+  "description": "Echo env variables passed to Docker container via HTTP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZitRos/container-echo.git"
+  },
+  "keywords": [
+    "echo",
+    "docker",
+    "http"
+  ],
+  "author": "ZitRo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZitRos/container-echo/issues"
+  },
+  "homepage": "https://github.com/ZitRos/container-echo#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1"
+  }
+}
