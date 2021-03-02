@@ -1,13 +1,28 @@
-import express from 'express';
+import express from "express";
+import bodyParser from "body-parser";
 
 const app = express();
-const port = 80;
+const port = process.env.PORT || 80;
+const jsonToText = (obj) => JSON.stringify(obj, null, 1).replace(/\n\s*/g, " ");
 
-app.get('/', (_, res) => res.send({
-    'Container Environment Variables': process.env
-}));
+app.use(bodyParser.text({ type: "*/*" }));
+
+app.all("*", (req, res) => {
+  const response = {
+    "request-path": req.url,
+    "request-headers": req.headers,
+    "request-body": req.body,
+    "container-envs": process.env,
+  };
+  console.log(jsonToText(response));
+  res.send(response);
+});
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-    console.log(`Environment variables: ${JSON.stringify(process.env, null, 4)}`);
+  console.log(
+    `${jsonToText({
+      "listening-on-port": port,
+      "container-envs": process.env,
+    })}`
+  );
 });
