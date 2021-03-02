@@ -1,6 +1,6 @@
 # container-echo
 
-A simple container that listens on port 80 (or on the `PORT` environment variable if provided).
+A simple container that listens on port 80 (or on the `PORT` environment variable if provided). Useful for debugging containerized environments (Kubernetes, [Cloud Run](https://cloud.google.com/run), etc), or just as a demo container.
 
 Usage
 -----
