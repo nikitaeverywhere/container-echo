@@ -2,7 +2,16 @@
 
 A simple container that listens on port 80 (or on the `PORT` environment variable if provided).
 
-It logs and outputs in the following format (on a single line):
+Usage
+-----
+
+Pull the public image from [docker registry](https://hub.docker.com/r/zitros/container-echo):
+
+```bash
+docker pull zitros/container-echo
+```
+
+When running, it logs and outputs in the following format (on a single line):
 
 ```json
 {
